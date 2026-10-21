@@ -11,7 +11,7 @@ window.PRESTASI=[
  {t:"Juara 2 Allievo Futsal Championship",y:2025,b:"Olahraga",l:"Provinsi",i:"https://cdn-jpr.jawapos.com/images/18/2026/10/18/pertandingan-mts-negeri-2-sukoharjo-futsal-championship-2026-di-gor-bung-karno-sukoharjo-sabtu-1710-istimewa-HDZx6.webp"},
  {t:"Juara Umum PORSENI (13 medali)",y:2025,b:"Olahraga",l:"Kabupaten",i:"https://i.ytimg.com/vi/2qjQXYjywwQ/hqdefault.jpg"},
  {t:"Juara 3 Bola Voli Putra",y:"",b:"Olahraga",l:"",i:IMG.voli},
- {t:"Juara II Final Nasional Youth Football Academy",y:"",b:"Olahraga",l:"Nasional",i:"assets/img/youth-football-academy.jpg"},
+ {t:"juara utama 2 se-jawa tengah",y:"",b:"Olahraga",l:"Nasional",i:"assets/img/youth-football-academy.jpg"},
  {t:"Juara 1 Festival Dalang Cilik",y:"",b:"Seni",l:"",i:IMG.dalang}
 ];
 window.BERITA=[
