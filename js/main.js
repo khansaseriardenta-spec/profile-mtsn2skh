@@ -1,5 +1,5 @@
 (()=>{
-const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],C=window.CONFIG,esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $=(s,r=document)=>r.querySelector(s),C=window.CONFIG,esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ico=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
 const empty=(t,n="trophy")=>`<div class="empty">${ico(n)}<p>${t}</p></div>`;
 const card=(x,body)=>`<article class="card rv"><img referrerpolicy="no-referrer" src="${x.i}" alt="${esc(x.t)}" loading="lazy"${x.p?` style="object-position:${x.p}"`:""}><div class="card-b">${body}</div></article>`;
@@ -40,17 +40,8 @@ const lb=$("#lb");
 $("#galeri-list").onclick=e=>{const b=e.target.closest("button");if(!b)return;const g=GALERI[b.dataset.i];$("img",lb).src=g.i;$("img",lb).alt=g.t;$("p",lb).textContent=g.t;lb.showModal()};
 $(".lb-x").onclick=()=>lb.close();lb.onclick=e=>{if(e.target===lb)lb.close()};
 
-// Video YouTube: thumbnail dulu, iframe dimuat saat diklik. Video yang linknya mati disembunyikan otomatis.
-const vids=C.youtube.map(v=>typeof v==="string"?{id:v,t:"Video kegiatan"}:v);
-$("#video-list").innerHTML=vids.length?`<div class="vid">${vids.map(v=>`<figure class="rv" data-id="${esc(v.id)}"><button class="vthumb" type="button" aria-label="Putar: ${esc(v.t)}"><img referrerpolicy="no-referrer" src="https://i.ytimg.com/vi/${encodeURIComponent(v.id)}/hqdefault.jpg" alt="" loading="lazy"><span class="vplay">${ico("play")}</span></button><figcaption>${esc(v.t)}</figcaption></figure>`).join("")}</div>`+(C.channel?`<p class="mt"><a class="link" target="_blank" rel="noopener" href="${esc(C.channel)}">Lihat semua video di YouTube ${ico("arrow")}</a></p>`:""):empty("Video resmi madrasah belum ditambahkan. Isi di js/config.js.","play");
-$$(".vid figure").forEach(f=>{
-  const im=$("img",f),bad=()=>f.remove();
-  im.addEventListener("error",bad);
-  im.addEventListener("load",()=>{if(im.naturalWidth<=120)bad()}); // YouTube mengembalikan gambar 120px untuk video yang tidak ada
-  $(".vthumb",f).onclick=()=>{const t=$(".vthumb",f);t.outerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(f.dataset.id)}?autoplay=1" title="${esc($("figcaption",f).textContent)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`};
-});
-// Foto yang gagal dimuat diganti placeholder netral
-document.addEventListener("error",e=>{const t=e.target;if(t.tagName==="IMG"&&!t.dataset.fb&&!t.closest(".vthumb")){t.dataset.fb=1;t.src="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect width="800" height="600" fill="#e8efe9"/><text x="400" y="310" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#6b7f72">MTsN 2 Sukoharjo</text></svg>')}},true);
+// Video YouTube
+$("#video-list").innerHTML=C.youtube.length?`<div class="vid">${C.youtube.map(v=>{v=typeof v==="string"?{id:v,t:"Video kegiatan"}:v;return `<figure class="rv"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}" title="${esc(v.t)}" allowfullscreen></iframe><figcaption>${esc(v.t)}</figcaption></figure>`}).join("")}</div>`+(C.channel?`<p class="mt"><a class="link" target="_blank" rel="noopener" href="${esc(C.channel)}">Lihat semua video di YouTube ${ico("arrow")}</a></p>`:""):empty("Video resmi madrasah belum ditambahkan. Isi di js/config.js.","play");
 
 // Kontak, WhatsApp
 $("#c-alamat").textContent=C.alamat;

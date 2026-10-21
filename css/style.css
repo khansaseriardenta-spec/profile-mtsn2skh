@@ -100,5 +100,3 @@ footer{background:var(--ink);color:#DEE2E6;padding:1.5rem 0;font-size:.9rem;bord
  .news .card:not(:first-child){grid-template-columns:110px 1fr}
  h2{font-size:1.75rem}
 }
-
-.vid .vthumb{position:relative;display:block;width:100%;padding:0;border:0;background:var(--ink);border-radius:var(--r);overflow:hidden;cursor:pointer;aspect-ratio:16/9}.vid .vthumb img{width:100%;height:100%;object-fit:cover}.vplay{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);display:grid;place-items:center;color:#fff}.vplay .ic{width:28px;height:28px}

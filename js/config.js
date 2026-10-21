@@ -7,7 +7,6 @@ window.CONFIG={
   youtube:[         // tambah video: {id:"ID_VIDEO",t:"Judul"}
     {id:"bvHxjp8FwiQ",t:"Mars MTsN 2 Sukoharjo Berkilau"},
     {id:"beYI8s2CJXI",t:"Tes PPDB MTsN 2 Sukoharjo TP 2025-2026"},
-    {id:"z-7Er0s2b0A",t:"MATSAMA Hari ke-2 MTsN 2 Sukoharjo"},
-    {id:"2qjQXYjywwQ",t:"Porseni Pelajar MTs se-Kabupaten Sukoharjo (Kemenag Sukoharjo)"}
+    {id:"z-7Er0s2b0A",t:"MATSAMA Hari ke-2 MTsN 2 Sukoharjo"}
   ]
 };
