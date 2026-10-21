@@ -35,7 +35,7 @@ function renderBerita(){
 $("#berita-chips").onclick=e=>{if(e.target.tagName==="BUTTON"){cat=e.target.textContent;renderBerita()}};
 
 // Galeri + lightbox
-$("#galeri-list").innerHTML=GALERI.map((g,i)=>`<button class="rv" data-i="${i}" aria-label="Perbesar: ${esc(g.t)}"><img referrerpolicy="no-referrer" src="${g.i}" alt="${esc(g.t)}" loading="lazy"></button>`).join("");
+$("#galeri-list").innerHTML=GALERI.map((g,i)=>`<button class="rv" data-i="${i}" aria-label="Perbesar: ${esc(g.t)}"><img referrerpolicy="no-referrer" src="${g.i}" alt="${esc(g.t)}" loading="lazy"${g.p?` style="object-position:${g.p}"`:""}></button>`).join("");
 const lb=$("#lb");
 $("#galeri-list").onclick=e=>{const b=e.target.closest("button");if(!b)return;const g=GALERI[b.dataset.i];$("img",lb).src=g.i;$("img",lb).alt=g.t;$("p",lb).textContent=g.t;lb.showModal()};
 $(".lb-x").onclick=()=>lb.close();lb.onclick=e=>{if(e.target===lb)lb.close()};
