@@ -2,7 +2,7 @@
 const $=(s,r=document)=>r.querySelector(s),C=window.CONFIG,esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ico=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
 const empty=(t,n="trophy")=>`<div class="empty">${ico(n)}<p>${t}</p></div>`;
-const card=(x,body)=>`<article class="card rv"><img src="${x.i}" alt="${esc(x.t)}" loading="lazy"><div class="card-b">${body}</div></article>`;
+const card=(x,body)=>`<article class="card rv"><img src="${x.i}" alt="${esc(x.t)}" loading="lazy"${x.p?` style="object-position:${x.p}"`:""}><div class="card-b">${body}</div></article>`;
 
 // Navigasi mobile
 const burger=$(".burger"),menu=$("#menu");

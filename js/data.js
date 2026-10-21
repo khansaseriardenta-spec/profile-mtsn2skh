@@ -24,7 +24,7 @@ window.GALERI=[
  {t:"Allievo Futsal Championship",i:IMG.l+"futsal.svg"},{t:"Juara Umum PORSENI",i:IMG.l+"porseni.svg"}
 ];
 window.EKSKUL=[
- {t:"Robotik",d:"Merakit dan memprogram robot, langganan finalis kompetisi internasional.",i:IMG.l+"robotik.svg"},
- {t:"Futsal dan Voli",d:"Pembinaan rutin untuk kejuaraan tingkat kabupaten hingga nasional.",i:IMG.l+"futsal.svg"},
- {t:"Karawitan",d:"Sanggar Karawitan Laras Siswo Budoyo melestarikan seni gamelan Jawa.",i:IMG.k+"karawitan.svg"}
+ {t:"Robotik",d:"Merakit dan memprogram robot, langganan finalis kompetisi internasional.",i:IMG.k+"ekskul-robotik.jpg",p:"50% 70%"},
+ {t:"Futsal dan Voli",d:"Pembinaan rutin untuk kejuaraan tingkat kabupaten hingga nasional.",i:IMG.k+"ekskul-futsal.jpg",p:"50% 75%"},
+ {t:"Karawitan",d:"Sanggar Karawitan Laras Siswo Budoyo melestarikan seni gamelan Jawa.",i:IMG.k+"ekskul-karawitan.jpg"}
 ];

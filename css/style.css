@@ -38,6 +38,8 @@ nav a:not(.btn):hover,nav a.on{color:var(--w);font-weight:500;border-color:var(-
 /* zig-zag */
 .zig{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3rem}
 .zig.rev>img{order:2}
+.zig.potret{grid-template-columns:minmax(0,420px) 1fr}
+.zig.potret .meta{margin-bottom:1rem}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin-bottom:1.5rem}
 .chips button,.chips li{border:1.5px solid var(--line);background:var(--w);padding:6px 16px;border-radius:var(--r);font:500 .875rem Lato,sans-serif;color:var(--ink);cursor:pointer}
 .chips button[aria-pressed=true]{background:var(--g);border-color:var(--g);color:var(--w)}
@@ -89,7 +91,7 @@ footer{background:var(--ink);color:#DEE2E6;padding:1.5rem 0;font-size:.9rem;bord
  .burger{display:block}
  nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:stretch;padding:1rem 1.5rem 1.5rem;gap:.75rem}
  nav.open{display:flex}
- .hero-in,.zig,.kontak,.news{grid-template-columns:1fr}.zig.rev>img{order:0}
+ .hero-in,.zig,.zig.potret,.kontak,.news{grid-template-columns:1fr}.zig.rev>img{order:0}
  .stats-in{grid-template-columns:repeat(2,1fr)}.news .card:first-child{grid-row:auto}
  .news .card:not(:first-child){grid-template-columns:110px 1fr}
  h2{font-size:1.75rem}
