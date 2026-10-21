@@ -2,7 +2,7 @@
 const $=(s,r=document)=>r.querySelector(s),C=window.CONFIG,esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ico=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
 const empty=(t,n="trophy")=>`<div class="empty">${ico(n)}<p>${t}</p></div>`;
-const card=(x,body)=>`<article class="card rv"><img src="${x.i}" alt="${esc(x.t)}" loading="lazy"${x.p?` style="object-position:${x.p}"`:""}><div class="card-b">${body}</div></article>`;
+const card=(x,body)=>`<article class="card rv"><img referrerpolicy="no-referrer" src="${x.i}" alt="${esc(x.t)}" loading="lazy"${x.p?` style="object-position:${x.p}"`:""}><div class="card-b">${body}</div></article>`;
 
 // Navigasi mobile
 const burger=$(".burger"),menu=$("#menu");
@@ -35,7 +35,7 @@ function renderBerita(){
 $("#berita-chips").onclick=e=>{if(e.target.tagName==="BUTTON"){cat=e.target.textContent;renderBerita()}};
 
 // Galeri + lightbox
-$("#galeri-list").innerHTML=GALERI.map((g,i)=>`<button class="rv" data-i="${i}" aria-label="Perbesar: ${esc(g.t)}"><img src="${g.i}" alt="${esc(g.t)}" loading="lazy"></button>`).join("");
+$("#galeri-list").innerHTML=GALERI.map((g,i)=>`<button class="rv" data-i="${i}" aria-label="Perbesar: ${esc(g.t)}"><img referrerpolicy="no-referrer" src="${g.i}" alt="${esc(g.t)}" loading="lazy"></button>`).join("");
 const lb=$("#lb");
 $("#galeri-list").onclick=e=>{const b=e.target.closest("button");if(!b)return;const g=GALERI[b.dataset.i];$("img",lb).src=g.i;$("img",lb).alt=g.t;$("p",lb).textContent=g.t;lb.showModal()};
 $(".lb-x").onclick=()=>lb.close();lb.onclick=e=>{if(e.target===lb)lb.close()};
