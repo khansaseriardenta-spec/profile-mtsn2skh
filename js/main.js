@@ -41,7 +41,7 @@ $("#galeri-list").onclick=e=>{const b=e.target.closest("button");if(!b)return;co
 $(".lb-x").onclick=()=>lb.close();lb.onclick=e=>{if(e.target===lb)lb.close()};
 
 // Video YouTube
-$("#video-list").innerHTML=C.youtube.length?`<div class="gal">${C.youtube.map(id=>`<iframe loading="lazy" style="width:100%;aspect-ratio:16/9;border:0;border-radius:4px" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" title="Video kegiatan" allowfullscreen></iframe>`).join("")}</div>`:empty("Video resmi madrasah belum ditambahkan. Isi ID YouTube di js/config.js.","play");
+$("#video-list").innerHTML=C.youtube.length?`<div class="vid">${C.youtube.map(v=>{v=typeof v==="string"?{id:v,t:"Video kegiatan"}:v;return `<figure class="rv"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}" title="${esc(v.t)}" allowfullscreen></iframe><figcaption>${esc(v.t)}</figcaption></figure>`}).join("")}</div>`+(C.channel?`<p class="mt"><a class="link" target="_blank" rel="noopener" href="${esc(C.channel)}">Lihat semua video di YouTube ${ico("arrow")}</a></p>`:""):empty("Video resmi madrasah belum ditambahkan. Isi di js/config.js.","play");
 
 // Kontak, WhatsApp
 $("#c-alamat").textContent=C.alamat;
